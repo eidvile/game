@@ -1,0 +1,60 @@
+.hud {
+  position: absolute;
+  top: 2%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3%;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.hud-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.4em 0.9em;
+  background: rgba(251, 243, 234, 0.88);
+  border: 0.16em solid var(--ink);
+  border-radius: 0.8em;
+  box-shadow: 0 0.2em 0 rgba(58, 42, 82, 0.18);
+  min-width: 4.5em;
+}
+
+.hud-label {
+  font-family: var(--font-tech);
+  font-size: 0.55em;
+  letter-spacing: 0.15em;
+  color: var(--ink-soft);
+}
+
+.hud-value {
+  font-family: var(--font-heading);
+  font-size: 1.1em;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.hud-chip--warn {
+  border-color: var(--danger);
+  animation: hud-pulse 1s infinite ease-in-out;
+}
+
+.hud-chip--warn .hud-value {
+  color: var(--danger);
+}
+
+.hud-chip--ai .hud-value {
+  color: var(--cyan-deep);
+}
+
+@keyframes hud-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0.2em 0 rgba(58, 42, 82, 0.18);
+  }
+  50% {
+    box-shadow: 0 0.2em 0.6em rgba(224, 96, 122, 0.55);
+  }
+}
