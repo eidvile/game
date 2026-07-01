@@ -1,0 +1,150 @@
+.curtains {
+  position: absolute;
+  inset: -6% -6% -4% -6%;
+  z-index: 15;
+  pointer-events: none;
+}
+
+.curtain-rod {
+  position: absolute;
+  top: 2%;
+  left: -2%;
+  right: -2%;
+  height: 0.5em;
+  background: linear-gradient(180deg, #a8865f, #8a6a45);
+  border: 0.12em solid var(--ink);
+  border-radius: 0.4em;
+}
+
+.rod-finial {
+  position: absolute;
+  top: 50%;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background: #b99872;
+  border: 0.12em solid var(--ink);
+  transform: translateY(-50%);
+}
+
+.rod-finial--left {
+  left: -0.6em;
+}
+
+.rod-finial--right {
+  right: -0.6em;
+}
+
+.curtain-panel {
+  position: absolute;
+  top: 3.2%;
+  bottom: 2%;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--lavender) 0%,
+    var(--lavender) 12%,
+    var(--lavender-deep) 12%,
+    var(--lavender-deep) 24%
+  );
+  border: 0.14em solid var(--ink);
+  border-radius: 0 0.4em 0.4em 0;
+  box-shadow: inset -0.3em 0 0.4em rgba(58, 42, 82, 0.15);
+  transition: width 0.65s cubic-bezier(0.65, 0, 0.35, 1);
+  transform-origin: top;
+  animation: curtain-sway 6s ease-in-out infinite;
+}
+
+.curtain-panel--left {
+  left: 0;
+  border-radius: 0 0.4em 0.4em 0;
+}
+
+.curtain-panel--right {
+  right: 0;
+  border-radius: 0.4em 0 0 0.4em;
+  animation-delay: -3s;
+}
+
+.curtains--open .curtain-panel--left {
+  width: 6%;
+}
+
+.curtains--open .curtain-panel--right {
+  width: 6%;
+}
+
+.curtains--closed .curtain-panel--left {
+  width: 52%;
+}
+
+.curtains--closed .curtain-panel--right {
+  width: 52%;
+}
+
+@keyframes curtain-sway {
+  0%,
+  100% {
+    transform: rotate(-0.4deg);
+  }
+  50% {
+    transform: rotate(0.4deg);
+  }
+}
+
+.pull-cord {
+  position: absolute;
+  top: 3.5%;
+  left: 15%;
+  width: 2.4em;
+  height: 42%;
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 16;
+  transform-origin: top center;
+  animation: cord-bob 3.4s ease-in-out infinite;
+}
+
+.cord-string {
+  width: 0.16em;
+  flex: 1;
+  background: #f1eef8;
+  border: 0.05em solid rgba(58, 42, 82, 0.4);
+  border-radius: 0.1em;
+}
+
+.cord-handle {
+  width: 1.2em;
+  height: 1.7em;
+  border-radius: 45%;
+  background: linear-gradient(180deg, #e9e4f2, #cfc6e2);
+  border: 0.15em solid var(--ink);
+  margin-top: -0.1em;
+  box-shadow: 0 0.15em 0.3em rgba(58, 42, 82, 0.25);
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.pull-cord:hover .cord-handle,
+.pull-cord:focus-visible .cord-handle {
+  box-shadow: 0 0 0.7em var(--cyan-bright);
+  transform: scale(1.12);
+}
+
+.pull-cord:active .cord-handle {
+  transform: scale(0.95);
+}
+
+@keyframes cord-bob {
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}

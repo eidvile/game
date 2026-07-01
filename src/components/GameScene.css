@@ -1,0 +1,50 @@
+.game-scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-size: 1em;
+}
+
+.wall {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 22% 15%, rgba(255, 255, 255, 0.35), transparent 40%),
+    linear-gradient(170deg, var(--wall-pink) 0%, var(--wall-pink-deep) 100%);
+}
+
+.window-bay {
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  width: 34%;
+  height: 78%;
+  z-index: 2;
+}
+
+.desk {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 22%;
+  z-index: 4;
+}
+
+.desk-surface {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--desk-brown) 0%, var(--desk-brown-dark) 100%);
+  border-top: 0.3em solid #8f5a34;
+  box-shadow: inset 0 0.6em 1.2em rgba(0, 0, 0, 0.18);
+}
+
+.desk-edge {
+  position: absolute;
+  top: -0.35em;
+  left: 0;
+  right: 0;
+  height: 0.35em;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.05));
+}

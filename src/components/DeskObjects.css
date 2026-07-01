@@ -1,0 +1,239 @@
+.desk-objects {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+}
+
+.obj {
+  position: absolute;
+}
+
+/* Lamp */
+.obj-lamp {
+  left: 1%;
+  bottom: 17%;
+  width: 10%;
+  height: 34%;
+}
+
+.lamp-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.lamp-base-shape,
+.lamp-stem {
+  fill: #e4dce8;
+  stroke: var(--ink);
+  stroke-width: 3;
+}
+
+.lamp-shade {
+  fill: #f4eee0;
+  stroke: var(--ink);
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+
+.lamp-glow {
+  fill: #ffe9a8;
+  opacity: 0.9;
+  animation: lamp-flicker 3.2s infinite ease-in-out;
+}
+
+.lamp-light-cone {
+  position: absolute;
+  top: 42%;
+  left: 20%;
+  width: 140%;
+  height: 90%;
+  background: radial-gradient(ellipse at top, rgba(255, 232, 168, 0.4), transparent 70%);
+  animation: lamp-flicker 3.2s infinite ease-in-out;
+}
+
+@keyframes lamp-flicker {
+  0%,
+  100% {
+    opacity: 0.85;
+  }
+  45% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.7;
+  }
+}
+
+/* Robot */
+.obj-robot {
+  left: 12%;
+  bottom: 18.5%;
+  width: 6%;
+  height: 12%;
+}
+
+.robot-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.robot-head,
+.robot-body {
+  fill: #e9e4f2;
+  stroke: var(--ink);
+  stroke-width: 3;
+}
+
+.robot-antenna {
+  fill: var(--ink);
+}
+
+.robot-antenna-tip {
+  fill: var(--cyan-bright);
+}
+
+.robot-panel {
+  fill: var(--lavender);
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+
+.robot-eye {
+  fill: var(--cyan-bright);
+  animation: robot-blink 4.5s infinite;
+  transform-origin: center;
+}
+
+.robot-eye-r {
+  animation-delay: 0.05s;
+}
+
+@keyframes robot-blink {
+  0%,
+  92%,
+  100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.1);
+  }
+}
+
+/* Neural card sticker */
+.obj-card {
+  left: 2%;
+  bottom: 15%;
+  width: 8%;
+  transform: rotate(-6deg);
+}
+
+.card-svg {
+  width: 100%;
+  overflow: visible;
+}
+
+.card-bg {
+  fill: var(--paper);
+  stroke: var(--ink);
+  stroke-width: 3;
+}
+
+.card-svg .node {
+  fill: var(--cyan-bright);
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+
+.card-svg .edges line {
+  stroke: var(--lavender-deep);
+  stroke-width: 2;
+}
+
+/* Cube */
+.obj-cube {
+  left: 61%;
+  bottom: 17.5%;
+  width: 6.5%;
+}
+
+.cube-svg {
+  width: 100%;
+  overflow: visible;
+  animation: cube-float 3.6s infinite ease-in-out;
+}
+
+.cube-face-outline {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 3;
+}
+
+.cube-face {
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+
+.cube-face-top {
+  fill: var(--cyan-glow);
+}
+
+.cube-face-left {
+  fill: var(--cyan-deep);
+}
+
+.cube-face-right {
+  fill: var(--cyan-bright);
+}
+
+@keyframes cube-float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    filter: drop-shadow(0 0 0.4em rgba(124, 232, 232, 0.6));
+  }
+  50% {
+    transform: translateY(-6%) scale(1.02);
+    filter: drop-shadow(0 0 0.9em rgba(124, 232, 232, 0.9));
+  }
+}
+
+/* Notebook */
+.obj-notebook {
+  left: 70%;
+  bottom: 15.5%;
+  width: 13%;
+}
+
+.notebook-svg {
+  width: 100%;
+  overflow: visible;
+}
+
+.notebook-cover {
+  fill: #4a3d68;
+  stroke: var(--ink);
+  stroke-width: 3;
+}
+
+.notebook-spiral circle {
+  fill: #d9d2e6;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+
+.notebook-circuit {
+  fill: none;
+  stroke: var(--cyan-glow);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.notebook-chip {
+  fill: none;
+  stroke: var(--cyan-bright);
+  stroke-width: 2;
+}
